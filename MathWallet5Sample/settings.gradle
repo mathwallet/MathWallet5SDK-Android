@@ -1,0 +1,3 @@
+include ':mathwallet5lib'
+include ':app'
+rootProject.name = "MathWallet5Sample"
