@@ -1,7 +1,7 @@
 
 # MathWallet5SDK-Android
 #### 基于SimpleWallet协议的Android SDK
-#### 目前支持 EVM 系的公链
+#### 目前支持 EVM 系,Solana的公链
 
 
 # 如何安装 ？
