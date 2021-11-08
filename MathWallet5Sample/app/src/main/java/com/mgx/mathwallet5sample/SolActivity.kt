@@ -13,7 +13,9 @@ import com.mgx.mathwallet5lib.bean.SimpleWallet
 import com.mgx.mathwallet5lib.bean.action.LoginData
 import com.mgx.mathwallet5lib.bean.action.OpenUrlData
 import com.mgx.mathwallet5lib.bean.action.SignMessageData
-import com.mgx.mathwallet5lib.bean.action.TransactionData
+import com.mgx.mathwallet5lib.bean.action.sol.SolInstruction
+import com.mgx.mathwallet5lib.bean.action.sol.SolKey
+import com.mgx.mathwallet5lib.bean.action.sol.SolTransactionData
 import com.mgx.mathwallet5lib.util.LogUtil
 import kotlin.math.pow
 
@@ -53,16 +55,26 @@ class SolActivity : AppCompatActivity() {
     }
 
     fun pay(view: View) {
-        val simpleWallet = SimpleWallet<TransactionData>(
+        val simpleWallet = SimpleWallet<SolTransactionData>(
             chain = chain,
             dapp = dapp,
             action = "transaction",
             //D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH transfer 0.0001 sol to CBNrNPRzhJb6oBWdy3CaN79TKJ41oCWA46A3fN49oFDV
-            data = TransactionData(
-                "D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH",
-                "CBNrNPRzhJb6oBWdy3CaN79TKJ41oCWA46A3fN49oFDV",
-                (0.0001 * 10.0.pow(9.0)).toString(),
-                ""
+            data = SolTransactionData(
+                "0x00000...",
+                arrayListOf(
+                    SolInstruction(
+                        arrayListOf(
+                            SolKey(
+                                "D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH",
+                                isSigner = true,
+                                isWritable = true
+                            )
+                        ),
+                        programId = ".....",  //Token id
+                        data = "0x00000"
+                    )
+                ),
             ),
             callback = "customscheme://customhost?response=",
         )

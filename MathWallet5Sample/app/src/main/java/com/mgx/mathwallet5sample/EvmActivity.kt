@@ -13,8 +13,7 @@ import com.mgx.mathwallet5lib.bean.SimpleWallet
 import com.mgx.mathwallet5lib.bean.action.LoginData
 import com.mgx.mathwallet5lib.bean.action.OpenUrlData
 import com.mgx.mathwallet5lib.bean.action.SignMessageData
-import com.mgx.mathwallet5lib.bean.action.TransactionData
-import com.mgx.mathwallet5lib.util.LogUtil
+import com.mgx.mathwallet5lib.bean.action.evm.EvmTransactionData
 import kotlin.math.pow
 
 class EvmActivity : AppCompatActivity() {
@@ -49,7 +48,7 @@ class EvmActivity : AppCompatActivity() {
     }
 
     fun pay(view: View) {
-        val simpleWallet = SimpleWallet<TransactionData>(
+        val simpleWallet = SimpleWallet<EvmTransactionData>(
             chain = Chain(
                 "EVM",
                 "56"            //bsc
@@ -60,7 +59,7 @@ class EvmActivity : AppCompatActivity() {
             ),
             action = "transaction",
             //0x306Bb8081C7dD356eA951795Ce4072e6e4bFdC32 transfer 0.0001 bnb to 0xf5bA48D7EFF5e89A90bf76Bb276AF6FD22A6233B
-            data = TransactionData(
+            data = EvmTransactionData(
                 "0x306Bb8081C7dD356eA951795Ce4072e6e4bFdC32",
                 "0xf5bA48D7EFF5e89A90bf76Bb276AF6FD22A6233B",
                 (0.0001 * 10.0.pow(18.0)).toString(),

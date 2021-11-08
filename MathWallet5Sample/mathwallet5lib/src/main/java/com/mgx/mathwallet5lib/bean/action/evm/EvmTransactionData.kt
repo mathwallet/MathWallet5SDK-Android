@@ -1,6 +1,6 @@
-package com.mgx.mathwallet5lib.bean.action
+package com.mgx.mathwallet5lib.bean.action.evm
 
-data class TransactionData(
+data class EvmTransactionData(
     var from: String,
     var to: String,
     var value: String,
