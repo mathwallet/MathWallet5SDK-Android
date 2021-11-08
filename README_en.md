@@ -1,7 +1,7 @@
 
 # MathWallet5SDK-Android
 #### Android SDK based on SimpleWallet protocol
-#### Supports public chains : EVM System
+#### Supports public chains : EVM System，Solana
 # How to install？
 #### 1.Copy mathwallet5lib-release.aar in the libs of Sample to your app libs
 #### 2.Add in app's build.gradle:
