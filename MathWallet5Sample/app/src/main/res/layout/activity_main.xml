@@ -14,4 +14,10 @@
         android:onClick="openEvm"
         android:text="EVM" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:onClick="openSol"
+        android:text="SOL" />
 </LinearLayout>

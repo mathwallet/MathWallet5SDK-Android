@@ -15,4 +15,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, EvmActivity::class.java))
     }
 
+    fun openSol(view: View) {
+        startActivity(Intent(this, SolActivity::class.java))
+    }
 }
