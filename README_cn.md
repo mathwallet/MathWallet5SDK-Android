@@ -55,7 +55,7 @@ repositories {
         )
 ```
 
-#### 2.转账
+#### 2.Transaction
 ```java
   val simpleWallet = SimpleWallet<TransactionData>(
             chain = Chain(
