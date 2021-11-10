@@ -50,7 +50,7 @@ Set a custom host and scheme
             callback = "customscheme://customhost?response=",       //callback，scheme and host must be the same as the RouterActivity in xml
         )
 ```
-#### 2.Transfer
+#### 2.Transaction
 ```java
   val simpleWallet = SimpleWallet<EvmTransactionData>(
             chain = Chain(
