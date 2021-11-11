@@ -1,6 +1,7 @@
 package com.mgx.mathwallet5sample
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
@@ -59,21 +60,125 @@ class SolActivity : AppCompatActivity() {
             chain = chain,
             dapp = dapp,
             action = "transaction",
-            //D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH transfer 0.0001 sol to CBNrNPRzhJb6oBWdy3CaN79TKJ41oCWA46A3fN49oFDV
+            //D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH transfer 0.0001 MATH to H6naeqz7sQj4E3StSBP43CgoZE2JqfMfoUckNK5rua1L
             data = SolTransactionData(
-                "0x00000...",
+                "",
                 arrayListOf(
-                    SolInstruction(
+                    // TransferInstruction
+//                    SolInstruction(
+//                        arrayListOf(
+//                            SolKey(
+//                                "D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH",
+//                                isSigner = true,
+//                                isWritable = true
+//                            ),
+//                            SolKey(
+//                                "H6naeqz7sQj4E3StSBP43CgoZE2JqfMfoUckNK5rua1L",
+//                                isSigner = false,
+//                                isWritable = true
+//                            )
+//                        ),
+//                        programId = "11111111111111111111111111111111",  //Token id
+//                        data = "02000000a08601000000000002000000a086010000000000"
+//                    )
+
+                    /**
+                     * SPLTokenTransfer include createNewAccountAddress
+                     */
+//                    SolInstruction(
+//                        arrayListOf(
+//                            // Init
+//                            SolKey(
+//                                "H6naeqz7sQj4E3StSBP43CgoZE2JqfMfoUckNK5rua1L",
+//                                isSigner = false,
+//                                isWritable = false
+//                            )
+//                        ),
+//                        programId = "4MNPdKu9wFMvEeZBMt3Eipfs5ovVWTJb31pEXDJAAxX5",  //Token id
+//                        data = "0000000000000000000000000000000000000000000000000000000000000000"
+//                    ), SolInstruction(
+//                        arrayListOf(
+//                            // Create Account
+//                            SolKey(
+//                                "D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH",
+//                                isSigner = true,
+//                                isWritable = true
+//                            ),
+//                            SolKey(
+//                                "FPNp3cz77JUTSgq8h7SCJaf19FRsYGXfU49KCLEa5VF7",
+//                                isSigner = false,
+//                                isWritable = true
+//                            ), SolKey(
+//                                "H6naeqz7sQj4E3StSBP43CgoZE2JqfMfoUckNK5rua1L",
+//                                isSigner = false,
+//                                isWritable = false
+//                            ), SolKey(
+//                                "GeDS162t9yGJuLEHPWXXGrb1zwkzinCgRwnT8vHYjKza",
+//                                isSigner = false,
+//                                isWritable = false
+//                            ), SolKey(
+//                                "11111111111111111111111111111111",
+//                                isSigner = false,
+//                                isWritable = false
+//                            ), SolKey(
+//                                "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+//                                isSigner = false,
+//                                isWritable = false
+//                            ), SolKey(
+//                                "SysvarRent111111111111111111111111111111111",
+//                                isSigner = false,
+//                                isWritable = false
+//                            )
+//                        ),
+//                        programId = "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",  //Token id
+//                        data = ""
+//                    )
+//                    , SolInstruction(
+//                        arrayListOf(
+//                            // TransferToken
+//
+//                            SolKey(
+//                                "Fs3BgAwGTfQqeUpjWqEdhBWuHqPH7c8tb9pnfEfDncFb",
+//                                isSigner = false,
+//                                isWritable = true
+//                            ), SolKey(
+//                                "FPNp3cz77JUTSgq8h7SCJaf19FRsYGXfU49KCLEa5VF7",
+//                                isSigner = false,
+//                                isWritable = true
+//                            ),  SolKey(
+//                                "D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH",
+//                                isSigner = true,
+//                                isWritable = false
+//                            )
+//                        ),
+//                        programId = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",  //Token id
+//                        data = "036400000000000000"
+//                    )
+
+                    /**
+                     * SplTokenTransfer not include CreateNewAccount
+                     */
+                   SolInstruction(
                         arrayListOf(
+                            // TransferSPLToken
                             SolKey(
+                                "Fs3BgAwGTfQqeUpjWqEdhBWuHqPH7c8tb9pnfEfDncFb",
+                                isSigner = false,
+                                isWritable = true
+                            ), SolKey(
+                                "FPNp3cz77JUTSgq8h7SCJaf19FRsYGXfU49KCLEa5VF7",
+                                isSigner = false,
+                                isWritable = true
+                            ),  SolKey(
                                 "D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH",
                                 isSigner = true,
                                 isWritable = true
                             )
                         ),
-                        programId = ".....",  //Token id
-                        data = "0x00000"
+                        programId = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",  //Token id
+                        data = "036400000000000000"
                     )
+
                 ),
             ),
             callback = "customscheme://customhost?response=",
@@ -84,7 +189,7 @@ class SolActivity : AppCompatActivity() {
             }
         })
     }
-
+    private  val TAG = "SolActivity"
     fun signMessage(view: View) {
         val simpleWallet = SimpleWallet<SignMessageData>(
             chain = chain,
@@ -92,7 +197,7 @@ class SolActivity : AppCompatActivity() {
             action = "signMessage",
             data = SignMessageData(
                 "D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH",
-                "hello world",
+                "546f2061766f6964206469676974616c20646f676e6170706572732c207369676e2062656c6f7720746f2061757468656e74696361746520776974682043727970746f436f726769732e",
             ),
             callback = "customscheme://customhost?response=",
         )
