@@ -62,9 +62,9 @@ class SolActivity : AppCompatActivity() {
             action = "transaction",
             //D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH transfer 0.0001 MATH to H6naeqz7sQj4E3StSBP43CgoZE2JqfMfoUckNK5rua1L
             data = SolTransactionData(
-                "",
+                "",// 可选
                 arrayListOf(
-                    // TransferInstruction
+                    // TransferSol
 //                    SolInstruction(
 //                        arrayListOf(
 //                            SolKey(
@@ -197,7 +197,8 @@ class SolActivity : AppCompatActivity() {
             action = "signMessage",
             data = SignMessageData(
                 "D37m1SKWnyY4fmhEntD84uZpjejUZkbHQUBEP3X74LuH",
-                "546f2061766f6964206469676974616c20646f676e6170706572732c207369676e2062656c6f7720746f2061757468656e74696361746520776974682043727970746f436f726769732e",
+//                "546f2061766f6964206469676974616c20646f676e6170706572732c207369676e2062656c6f7720746f2061757468656e74696361746520776974682043727970746f436f726769732e",
+            "To avoid digital dognappers, sign below to authenticate with CryptoCorgis."
             ),
             callback = "customscheme://customhost?response=",
         )
