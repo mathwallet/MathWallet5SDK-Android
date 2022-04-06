@@ -110,7 +110,7 @@ class EvmActivity : AppCompatActivity() {
             ),
             action = "openURL",
             data = OpenUrlData(
-                "https://pancakeswap.finance/",
+                "https://medishares-cn.oss-cn-hangzhou.aliyuncs.com/demos/simplewallet_android.html",
             ),
             callback = "customscheme://customhost?response=",
         )
