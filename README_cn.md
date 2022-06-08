@@ -21,6 +21,8 @@ repositories {
 #### 4.添加依赖库 implementation 'com.google.code.gson:gson:2.8.5'，如果已添加则无需重复添加
 #### 5.复制下面的代码到你的AndroidManifest.xml
 ```xml
+        <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/> // 兼容Android 11 需要添加此权限！！！！
+
         <activity android:name="com.mgx.mathwallet5lib.RouterActivity" >
             <intent-filter>
                 <data
