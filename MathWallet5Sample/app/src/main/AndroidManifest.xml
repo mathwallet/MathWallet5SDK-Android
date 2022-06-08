@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mgx.mathwallet5sample">
 
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+<!--    <queries>-->
+<!--        <package android:name="com.mathwallet.android" />-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.VIEW" />-->
+<!--        </intent>-->
+<!--    </queries>-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +25,7 @@
         </activity>
         <activity android:name=".EvmActivity" />
 
-        <activity android:name="com.mgx.mathwallet5lib.RouterActivity" >
+        <activity android:name="com.mgx.mathwallet5lib.RouterActivity">
             <intent-filter>
                 <data
                     android:host="customhost"
