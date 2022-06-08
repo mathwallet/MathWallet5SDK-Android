@@ -18,7 +18,8 @@ repositories {
 ```
 #### 4.copy the following code to your AndroidManifest.xml
 ```xml
-       <activity android:name="com.mgx.mathwallet5lib.RouterActivity" >
+       <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/> // Android 11 need this permission !!!!
+       <activity android:name="com.mgx.mathwallet5lib.RouterActivity" >
             <intent-filter>
                 <data
                     android:host="customhost"
